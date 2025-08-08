@@ -1,0 +1,3 @@
+[submodule "METIS"]
+	path = METIS
+	url = https://github.com/scivision/METIS
