@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16...4.1)
+cmake_minimum_required(VERSION 3.19...4.3)
 
 if(NOT CMAKE_BUILD_TYPE AND NOT DEFINED ENV{CMAKE_BUILD_TYPE})
   set(CMAKE_BUILD_TYPE Release CACHE STRING "Debug or Release")
@@ -43,8 +43,7 @@ if(SHARED)
   target_link_libraries(parmetis PRIVATE metis GKlib)
 endif()
 
-add_library(parmetis::parmetis INTERFACE IMPORTED GLOBAL)
-target_link_libraries(parmetis::parmetis INTERFACE parmetis)
+add_library(parmetis::parmetis ALIAS parmetis)
 
 install(TARGETS parmetis EXPORT ${PROJECT_NAME}-targets)
 
